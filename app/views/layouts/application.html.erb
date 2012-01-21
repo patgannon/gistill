@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jistill</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+</head>
+<body style="padding-top: 40px">
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+<div class="topbar" data-scrollspy="scrollspy" data-dropdown="dropdown">
+  <div class="topbar-inner">
+    <div class="container">
+      <a class="brand" href="/">Jistill</a>
+      <ul class="nav">
+	<li id="home_link"><a href="/">Home</a></li>
+	<li id="about_link"><a href="/about">About</a></li>
+<% if user_signed_in? %>
+        <li id="my_books_link"><a href="/books">My Books</a></li>
+        <li id="create_link"><a href="/books/new">Create Book</a></li>
+<% end %>
+      </ul>
+      <ul class="nav secondary-nav">
+<% if !defined?(@hide_auth) %>
+  <% if user_signed_in? %>
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+  <% else %>
+        <li class="dropdown">
+	  <a href="#" class="dropdown-toggle">Sign in</a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+            <li class="divider"></li>
+            <li>&nbsp;Without Facebook:</li>
+	    <li><a href="/signup">Register</a></li>
+	    <li><%= link_to "Log in", new_user_session_path %></a></li>
+          </ul>
+	</li>
+  <% end %>
+<% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="signup_container">
+<%= yield %>
+</div>
+
+</body>
+</html>

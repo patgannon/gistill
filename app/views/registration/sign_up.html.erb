@@ -1,0 +1,56 @@
+<%= form_tag do %>
+        <fieldset>
+          <legend>Sign Up for an Invite</legend>
+          <p>
+	  Jistill is still in early beta. Please enter your name, email address, and a little information about how you'd like to use this app and we'll invite you as soon as we can. 
+          </p>
+          <p>
+          <a href="#">Learn more about Jistill</a>
+          </p>
+          <div class="clearfix">
+            <label for="user_name">* Name</label>
+            <div class="input">
+              <input class="xlarge required" id="user_name" name="user[name]" size="30" type="text" value="<%= @name %>" />
+            </div>
+          </div><!-- /clearfix -->
+          <div class="clearfix">
+            <label for="user_email">* Email</label>
+            <div class="input">
+              <input class="xlarge email required" id="user_email" name="user[email]" size="30" type="text" value="<%= @email %>" />
+            </div>
+          </div><!-- /clearfix -->
+
+	<% if !current_user %>
+          <div class="clearfix">
+            <label for="user_password">* Password</label>
+            <div class="input">
+              <input class="xlarge required" id="user_password" name="user[password]" size="30" type="password" value="" />
+            </div>
+          </div><!-- /clearfix -->
+          <div class="clearfix">
+            <label for="user_password_confirmation">* Password confirmation</label>
+            <div class="input">
+              <input class="xlarge required" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" value="" />
+            </div>
+          </div><!-- /clearfix -->
+	<% end %>
+          <div class="clearfix">
+            <label for="user_title">Title</label>
+            <div class="input">
+              <input class="xlarge" id="user_title" name="user[title]" size="30" type="text" value="<%= @title %>" />
+            </div>
+          </div><!-- /clearfix -->
+          <div class="clearfix">
+            <label for="textarea">* What are you hoping to do with this app?</label>
+            <div class="input">
+              <textarea class="required" id="user_reason" name="user[reason]" rows="3"></textarea>
+              <span class="help-block">
+                Is there a particular topic you'd like to create an ebook about?<br/>Are there particular content sources you already have in mind?
+              </span>
+            </div>
+          </div><!-- /clearfix -->
+          <div class="actions">
+            <input type="submit" class="btn primary" value="Register">
+          </div>
+        </fieldset>
+<% end %>

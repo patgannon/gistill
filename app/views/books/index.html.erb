@@ -1,0 +1,4 @@
+<h2>My Books</h2>
+<% @books.each do |book| %>
+  <a href="/books/<%=book.id%>/<%=book.escaped_title%>"><%=book.title%></a><br/>
+<% end %>

@@ -1,0 +1,45 @@
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=101233916656878";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+window.fbAsyncInit = function() {
+  FB.Event.subscribe('edge.create',
+    function(response) {
+      $.post('/registration/shared', function(data) {
+      });
+    }
+  );
+};
+</script>
+
+<h1>Thank You!<h1>
+<p>
+We will include you in our private beta as soon as we can.
+If you'd like to get invited faster, invite your friends to check out jistill. The more friends you invite, the sooner you'll be included in the beta! You can use the Facebook or Twitter buttons below, or you can send out the personalized URL below.
+</p>
+
+<p>
+Personalized URL: http://www.jistill.com/s/<%= current_user.id %>
+</p>
+
+<div class="fb-like" data-href="http://www.jistill.com/" data-send="true" data-width="450" data-show-faces="true"></div>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.jistill.com/s/<%= current_user.id %>" data-text="I just signed up for jistill.com. You can instantly create eBooks from existing content on the web!" data-count="none" data-via="patgannon">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+<!-- Place this tag where you want the +1 button to render -->
+<g:plusone annotation="inline" href="http://www.jistill.com/s/<%= current_user.id %>"></g:plusone>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>

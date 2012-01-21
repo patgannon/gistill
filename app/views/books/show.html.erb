@@ -1,0 +1,17 @@
+<br/>
+<%= form_tag :action=>"download" do %>
+<input type="hidden" name="id" value="<%= @book.id %>" />
+<h1><%= @book.title %></h1>
+<p>
+Assembled by <%= @book.user.name %>
+</p>
+<p>
+<% @book.chapters.each_with_index do |chapter, i| %>
+<a href="<%= chapter.url %>">Chapter <%= i+1 %> - <%= chapter.title %></a><br/>
+<% end %>
+</p>
+          <div class="actions">
+            <input type="submit" class="btn primary" value="Download PDF" />
+            <input type="button" class="btn" value="Edit" />
+          </div>
+<% end %>

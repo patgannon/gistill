@@ -1,0 +1,25 @@
+.signup_container {
+    margin: 30px 30px 30px 30px;
+}
+
+.home_box {
+  corner-radius-webkit: 20px; 
+  corner-radius: 20px; 
+  padding: 30px 30px 30px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 4px rgba(155,167,175,0.5); 
+  -webkit-box-shadow: 0 0 4px rgba(155,167,175,0.5);
+}
+
+.home_box h2 {
+  color: #0064AD;
+  font-size: 20px;
+}
+
+.nexus {
+  text-align: center
+}
+
+.nexus_signup {
+  margin: 50px;
+}
