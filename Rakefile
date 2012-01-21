@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Jistill::Application.load_tasks
+Gistill::Application.load_tasks

@@ -4,15 +4,15 @@ development:
 
 test:
   host: localhost
-  database: jistill_test
+  database: gistill_test
 
 # set these environment variables on your prod server
 production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
+  host: pearl.mongohq.com
+  port: 27020
+  username: heroku
+  password: thelild0c
+  database: app2571704
   # slaves:
   #   - host: slave1.local
   #     port: 27018
