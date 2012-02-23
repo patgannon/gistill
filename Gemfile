@@ -44,6 +44,7 @@ gem "nokogiri"
 gem "prawn" #, :path => "/usr/lib/ruby/gems/1.8/gems/prawn-0.11.1"
 gem "pismo"
 gem "cancan"
+gem "fog"
 
 group :test do
   # Pretty printed test output

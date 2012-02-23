@@ -11,12 +11,10 @@ class BooksController < ApplicationController
 
   def download
     book = Book.find(params["id"])
-    path = "public/PDF/#{book.escaped_title}.pdf"
-    book.render path
-    #render :text=>"id = #{params[:id]}, folder = #{Dir.pwd}/public#{path}"
-    #redirect_to path
+    book.render
+
     #TODO: Send out-process, and maybe send mime-type
-    send_file "#{Dir.pwd}/#{path}"
+    send_data book.contents, :filename => "#{book.title.gsub(' ', '_')}.pdf", :type => "application/pdf"
   end
 
   def new
