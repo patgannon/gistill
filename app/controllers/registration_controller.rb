@@ -8,7 +8,6 @@ class RegistrationController < ApplicationController
       else #TODO: VALIDATION! (passwords match, etc.)
         User.create!(params['user'])
       end
-      #Rails::logger.info "form posted: #{Time.now}"
       #TODO: Send email (take a look at Devise's RegistrationController)
       #TODO: (nice to have) Log the user in automatically
       redirect_to :action => :thank_you #maybe: render :template=>:thank_you

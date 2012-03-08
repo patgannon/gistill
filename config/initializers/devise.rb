@@ -202,5 +202,9 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
 
-  config.omniauth :facebook, "189040911168550", "788e612f6ef64c878cbe82022500f002"
+  if Rails.env == "development"
+    config.omniauth :facebook, "340771442626763", "2e30cc1b5206fd4e0e1d3b33bac70623"
+  else
+    config.omniauth :facebook, "189040911168550", "788e612f6ef64c878cbe82022500f002"
+  end
 end

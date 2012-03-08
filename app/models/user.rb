@@ -18,10 +18,8 @@ class User
     if user = User.find_by_email(data["email"])
       user
     else # Create a user with a stub password. 
-      #User.create!(:email => data["email"], :password => Devise.friendly_token[0,20]) 
       fb_id = data.delete("id")
-      #Rails::logger.info "fb_id: #{fb_id}"
-      User.create!(data.merge(:password => Devise.friendly_token[0,20], :facebook_id => fb_id))
+      User.new(data.merge(:password => Devise.friendly_token[0,20], :facebook_id => fb_id))
     end
   end
 
