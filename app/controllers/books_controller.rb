@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   #before_filter :authenticate_user!
+  authorize_resource
 
   def index
     @books = current_user.books

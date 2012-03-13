@@ -7,6 +7,7 @@ class User
 
   has_many :books
   field :shares, :type => Integer, :default => 0
+  field :active, :type => Boolean
 
   def self.find_by_email(in_email)
     User.first(conditions: {email: in_email})

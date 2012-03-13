@@ -18,7 +18,7 @@
       <ul class="nav">
 	<li id="home_link"><a href="/">Home</a></li>
 	<li id="about_link"><a href="/about">About</a></li>
-<% if user_signed_in? %>
+<% if user_signed_in? && can?(:manage, Book) %>
         <li id="my_books_link"><a href="/books">My Books</a></li>
         <li id="create_link"><a href="/books/new">Create Book</a></li>
 <% end %>
