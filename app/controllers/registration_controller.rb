@@ -6,7 +6,8 @@ class RegistrationController < ApplicationController
       if (current_user)
         current_user.update_without_password(params['user'])
       else #TODO: VALIDATION! (passwords match, etc.)
-        User.create!(params['user'])
+        user = User.create!(params['user'])
+        sign_in user, :event => :authentication
       end
       #TODO: Send email (take a look at Devise's RegistrationController)
       #TODO: (nice to have) Log the user in automatically
