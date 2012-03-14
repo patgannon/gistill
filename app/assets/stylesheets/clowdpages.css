@@ -1,5 +1,10 @@
 .signup_container {
-    margin: 30px 30px 30px 30px;
+    margin: 30px 20px 30px 20px;
+}
+
+
+.span-one-third {
+  width: 270px;
 }
 
 .home_box {
