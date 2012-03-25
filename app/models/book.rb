@@ -22,7 +22,6 @@ class Book
 
   def populate_chapters!
     chapters.each do |chapter|
-      #chapter.title = "FOO" #TODO: Trigger content extraction
       chapter.load_content!
       chapter.save!
     end

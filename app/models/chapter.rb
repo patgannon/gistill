@@ -10,9 +10,13 @@ class Chapter
   referenced_in :book
 
   def load_content!
-    doc = Pismo::Document.new(url)
-    self.title = doc.title
-    self.content = doc.body
+    begin
+      doc = Pismo::Document.new(url)
+      self.title = doc.title
+      self.content = doc.body
+    rescue Exception => ex
+      self.title = "Could not load article"
+    end
   end
 
   def load_content_old!
