@@ -108,8 +108,8 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.3.0)
-    nokogiri (1.5.2)
-    nokogiri (1.5.2-java)
+    nokogiri (1.5.3.rc3)
+    nokogiri (1.5.3.rc3-java)
     oa-core (0.3.2)
     oa-oauth (0.3.2)
       faraday (~> 0.7.3)
@@ -219,7 +219,7 @@ DEPENDENCIES
   jquery-rails
   less-rails-bootstrap
   mongoid (~> 2.3)
-  nokogiri
+  nokogiri (= 1.5.3.rc3)
   oa-oauth
   pismo
   prawn

@@ -39,7 +39,7 @@ gem "therubyracer"
 gem "devise"
 gem "oa-oauth", :require => "omniauth/oauth"
 #gem "omniauth"
-gem "nokogiri"
+gem "nokogiri", "1.5.3.rc3"
 #TODO: unhack this
 gem "prawn" #, :path => "/usr/lib/ruby/gems/1.8/gems/prawn-0.11.1"
 gem "pismo"
