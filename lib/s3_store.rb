@@ -13,7 +13,7 @@ class S3Store
   private
 
   def get_s3_folder()
-    storage = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => "AKIAIGWQEG3PEACTFTEQ", :aws_secret_access_key => "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")
+    storage = Fog::Storage.new(:provider => 'AWS', :aws_access_key_id => "XXX", :aws_secret_access_key => "YYY")
     directory = storage.directories.get("gistill-ebooks")
   end
 end
